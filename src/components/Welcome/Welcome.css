@@ -1,0 +1,65 @@
+.wlcm {
+    padding: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.wlcm-left h1{
+    font-size: 4rem;
+}
+
+.wlcm-left p {
+    font-size: 2rem;
+}
+
+.wlcm-right img {
+    width: 500px;
+    height: 500px;
+}
+
+.wlcm-btn {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.wlcm-btn button {
+    width: 100px;
+    height: 50px;
+    background-color: black;
+    color: white;
+    padding: .5rem;
+    border: none;
+    border-radius: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+
+    transition: all .3s ease;
+}
+
+.wlcm-btn button:hover {
+    background-color: rgb(34, 34, 34);
+    color: rgb(177, 217, 255);
+}
+
+.wlcm-btn button:active {
+    transform: scale(.9);
+    box-shadow: 0 0 10px black;
+}
+
+.wlcm-btn p {
+    font-size: 1.5rem;
+
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+
+.wlcm-right img {
+    width: 500px;
+    height: 500px;
+}
