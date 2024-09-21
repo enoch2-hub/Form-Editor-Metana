@@ -9,6 +9,26 @@ const Email = () => {
     const [email, setEmail] = useState('');
     const [isValid, setIsValid] = useState(true);
     const [isShaking, setIsShaking] = useState(false);
+
+    const [theme, setTheme] = useState('light'); // Default theme
+
+    // On component mount, check if a theme is saved in localStorage
+    useEffect(() => {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        setTheme(savedTheme);
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      }
+    }, []);
+
+    // Function to toggle between light and dark mode
+    const toggleTheme = () => {
+      const newTheme = theme === 'light' ? 'dark' : 'light';
+      setTheme(newTheme);
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme); // Save preference to localStorage
+    };
+
     
     
     const navigate = useNavigate();
@@ -78,6 +98,10 @@ const Email = () => {
     
       return (
         <>
+          <button onClick={toggleTheme}>
+            Switch to {theme === 'light' ? 'Dark' : 'Light'} Mode
+          </button>
+
         <div className="email">
             <div className="email-left hidden">
                 <h1>1 ➔ Enter your email</h1>
@@ -110,7 +134,9 @@ const Email = () => {
                 
             </div>
 
+
         </div>
+
 
 
 

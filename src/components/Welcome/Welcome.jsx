@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState} from 'react';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -8,6 +8,30 @@ import './Welcome.css';
 const Welcome = () => {
 
   const navigate = useNavigate();
+
+  const [theme, setTheme] = useState('light'); // Default theme
+
+
+
+
+  // On component mount, check if a theme is saved in localStorage
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      setTheme(savedTheme);
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    }
+  }, []);
+
+  // Function to toggle between light and dark mode
+  const toggleTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme); // Save preference to localStorage
+  };
+
+  
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -53,6 +77,10 @@ const Welcome = () => {
 
   return (
     <>
+          <button onClick={toggleTheme}>
+            Switch to {theme === 'light' ? 'Dark' : 'Light'} Mode
+          </button>
+
     <div className="wlcm">
         <div className="wlcm-left hidden">
             <h1>Welcome to our <br />form</h1>
