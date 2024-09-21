@@ -43,3 +43,15 @@
         font-size: 2rem;
     }
 }
+
+@media (max-width: 600px) {
+    .email {
+        padding: 5rem;
+    }
+    .email-left h1{
+        font-size: 2rem;
+    }
+    .email-left p {
+        font-size: 1.2rem;
+    }
+}

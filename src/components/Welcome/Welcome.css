@@ -84,3 +84,20 @@
         height: 300px;
     }
 }
+
+
+@media (max-width: 600px) {
+    .wlcm {
+        padding: 5rem;
+    }
+    .wlcm-left h1{
+        font-size: 2rem;
+    }
+    .wlcm-left p {
+        font-size: 1.2rem;
+    }
+    .wlcm-right img {
+        width: 200px;
+        height: 200px;
+    }
+}
